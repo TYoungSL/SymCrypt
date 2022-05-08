@@ -205,7 +205,7 @@ SymCryptXtsAesEncryptXmm(
     SymCryptWipeKnownSize( localScratch, sizeof( localScratch ) );
 }
 
-#if 0 //do not compile Zmm code for now
+//#if 0 //do not compile Zmm code for now
 VOID
 SYMCRYPT_CALL
 SymCryptXtsAesEncryptZmm(
@@ -260,7 +260,7 @@ SymCryptXtsAesEncryptZmm(
 
     SymCryptWipeKnownSize( localScratch, sizeof( localScratch ) );
 }
-#endif
+//#endif
 
 VOID
 SYMCRYPT_CALL
@@ -438,9 +438,9 @@ SymCryptXtsAesEncrypt(
 {
 #if SYMCRYPT_CPU_AMD64
     SYMCRYPT_EXTENDED_SAVE_DATA SaveData;
-    /* if( SYMCRYPT_CPU_FEATURES_PRESENT( SYMCRYPT_CPU_FEATURES_FOR_VAES_512_CODE ) ) {
+    if( SYMCRYPT_CPU_FEATURES_PRESENT( SYMCRYPT_CPU_FEATURES_FOR_VAES_512_CODE ) ) {
         SymCryptXtsAesEncryptZmm( pExpandedKey, cbDataUnit, tweak, pbSrc, pbDst, cbData );
-    } else */
+    } else
     if( SYMCRYPT_CPU_FEATURES_PRESENT( SYMCRYPT_CPU_FEATURES_FOR_VAES_256_CODE ) &&
         SymCryptSaveYmm( &SaveData ) == SYMCRYPT_NO_ERROR )
     {
@@ -640,7 +640,7 @@ SymCryptXtsAesDecryptXmm(
     SymCryptWipeKnownSize( localScratch, sizeof( localScratch ) );
 }
 
-#if 0 //do not compile Zmm code for now
+//#if 0 //do not compile Zmm code for now
 VOID
 SYMCRYPT_CALL
 SymCryptXtsAesDecryptZmm(
@@ -695,7 +695,7 @@ SymCryptXtsAesDecryptZmm(
 
     SymCryptWipeKnownSize( localScratch, sizeof( localScratch ) );
 }
-#endif
+//#endif
 
 VOID
 SYMCRYPT_CALL
@@ -765,9 +765,9 @@ SymCryptXtsAesDecrypt(
 {
 #if SYMCRYPT_CPU_AMD64
     SYMCRYPT_EXTENDED_SAVE_DATA SaveData;
-    /* if( SYMCRYPT_CPU_FEATURES_PRESENT( SYMCRYPT_CPU_FEATURES_FOR_VAES_512_CODE ) ) {
+    if( SYMCRYPT_CPU_FEATURES_PRESENT( SYMCRYPT_CPU_FEATURES_FOR_VAES_512_CODE ) ) {
         SymCryptXtsAesDecryptZmm( pExpandedKey, cbDataUnit, tweak, pbSrc, pbDst, cbData );
-    } else */
+    } else
     if( SYMCRYPT_CPU_FEATURES_PRESENT( SYMCRYPT_CPU_FEATURES_FOR_VAES_256_CODE ) &&
         SymCryptSaveYmm( &SaveData ) == SYMCRYPT_NO_ERROR )
     {

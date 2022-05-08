@@ -1236,7 +1236,13 @@ VOID
 initYmmRegisters();
 
 VOID
+initZmmRegisters();
+
+VOID
 verifyYmmRegisters();
+
+VOID
+verifyZmmRegisters();
 
 
 VOID

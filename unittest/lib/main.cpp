@@ -1957,7 +1957,15 @@ VOID verifyYmmRegisters()
 {
 }
 
+VOID verifyZmmRegisters()
+{
+}
+
 VOID initYmmRegisters()
+{
+}
+
+VOID initZmmRegisters()
 {
 }
 #endif

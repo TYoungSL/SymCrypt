@@ -10,6 +10,7 @@ set(SOURCES_COMMON
     aes-selftest.c
     aes-xmm.c
     aes-ymm.c
+    aes-zmm.c
     aescmac.c
     aesCtrDrbg.c
     AesTables.c
@@ -272,6 +273,7 @@ endif()
 if(CMAKE_SYSTEM_PROCESSOR MATCHES "AMD64")
     if (CMAKE_C_COMPILER_ID MATCHES "Clang|GNU")
         set_source_files_properties(aes-ymm.c PROPERTIES COMPILE_OPTIONS "-mavx;-mavx2;-mvaes;-mvpclmulqdq")
+        set_source_files_properties(aes-zmm.c PROPERTIES COMPILE_OPTIONS "-mavx;-mavx2;-mvaes;-mvpclmulqdq")
         set_source_files_properties(sha256Par-ymm.c PROPERTIES COMPILE_OPTIONS "-mavx;-mavx2")
         set_source_files_properties(sha512Par-ymm.c PROPERTIES COMPILE_OPTIONS "-mavx;-mavx2")
     endif()

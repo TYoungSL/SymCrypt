@@ -1,5 +1,5 @@
 //
-// aes-ymm.c    code for AES implementation
+// aes-zmm.c    code for AES implementation
 //
 // Copyright (c) Microsoft Corporation. Licensed under the MIT license.
 //

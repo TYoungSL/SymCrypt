@@ -78,7 +78,7 @@ SOURCES= \
     aes-asm.c \
     aes-xmm.c \
     aes-ymm.c \
-#    aes-zmm.c \
+    aes-zmm.c \
     aes-neon.c \
     aes-selftest.c \
     aesTables.c \
